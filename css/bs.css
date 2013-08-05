@@ -1,0 +1,30 @@
+p {
+	margin: 0 0 10px;
+}
+.callout {
+	margin: 20px 0;
+	padding: 15px 30px 15px 15px;
+	border-left: 5px solid #eee;
+}
+.callout h4 {
+	margin-top: 0;
+}
+.callout p:last-child {
+	margin-bottom: 0;
+}
+.callout-warning {
+	background-color: #fefbed;
+	border-color: #f1e7bc;
+}
+.callout-danger {
+	background-color: #fcf2f2;
+	border-color: #dFb5b4;
+}
+.callout-info {
+	background-color: #f0f7fd;
+	border-color: #d0e3f0;
+}
+.callout-debug {
+	background-color: #f5f5f5;
+	border-color: #ddd;
+}

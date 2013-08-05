@@ -1,0 +1,3 @@
+jQuery(function($) {
+	// TODO : Modéliser le cube en 3D / le faire tourner...
+})

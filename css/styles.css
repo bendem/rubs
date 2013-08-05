@@ -1,0 +1,62 @@
+div, span {
+	box-sizing: -webkit-border-box;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+}
+div {
+	margin: 0;
+	padding: 0;
+}
+.content {
+	padding-top: 80px;
+	text-align: center;
+	font-style: sans-serif;
+}
+.xdebug-var-dump {
+	text-align: left;
+}
+
+.cube {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.cube .b { background-color: blue; }
+.cube .r { background-color: red; }
+.cube .o { background-color: orange; }
+.cube .y { background-color: yellow; }
+.cube .g { background-color: green; }
+.cube .w { background-color: #fafafa; }
+
+.cube {
+	display: inline-block;
+}
+.cube .face {
+	display: inline-block;
+	position: relative;
+	border: 1px solid #aaa;
+	margin: 3px;
+	padding: 3px;
+}
+.cube span {
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	width: 25px;
+	height: 25px;
+	margin: 2px;
+	text-align: center;
+	line-height: 25px;
+	text-shadow: -1px 0 #555, 0 1px #555,
+      1px 0 #555, 0 -1px #555;
+    color: #ddd;
+}
+
+.cube .face-empty {
+	border: none;
+}
+.cube .face-empty span {
+	border: none;
+}
