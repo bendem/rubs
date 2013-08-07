@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Code permettant la génération du cube
+ */
 trait Generator {
 
 	public $colors = ['w', 'g', 'r', 'b', 'o', 'y'];
@@ -28,6 +31,7 @@ trait Generator {
 				$a[$i][$j] = $color;
 			}
 		}
+
 		return $a;
 	}
 

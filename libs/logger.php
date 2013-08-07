@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Système de logging
+ * @author bendem <bendembd@gmail.com>
+ */
 class Logger {
 
 	/**

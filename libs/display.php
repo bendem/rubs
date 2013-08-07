@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Code gérant l'affichage du cube
+ */
 trait Display {
 
 	/**

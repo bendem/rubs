@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Code gérant les mouvements des faces du cube
+ */
 trait Movements {
 
 	/**
@@ -11,7 +14,12 @@ trait Movements {
 	public function rotate($face, $direction = true, $times = 1) {
 		Logger::debug(sprintf('Rotating face %s, %sclockwise rotation, %s time%s...',
 			$face, $direction ? '' : 'counter', $times, $times > 1 ? 's' : ''));
+
 		// TODO : Rotating
+
+		$adj = $this->adjacentsFaces($face);
+		var_dump($face);
+		var_dump($adj);
 
 		if($times > 1) {
 			$this->rotate($face, $direction, $times - 1);
