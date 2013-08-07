@@ -22,7 +22,7 @@
 		</div>
 		<div class="logs">
 
-			<?php Logger::display() ?>
+			<?php Rubs\Logger::display() ?>
 
 		</div>
 		<div class="content">
