@@ -2,7 +2,7 @@
 
 class Cube {
 
-	use Movements, Generator, Display;
+	use Movements, Generator, Display, Logic, Getter;
 
 	protected $cube = [];
 
