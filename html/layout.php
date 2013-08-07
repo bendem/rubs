@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="top">
 	<head>
 		<meta charset="utf-8">
 		<title>Cube testing</title>
@@ -8,7 +8,7 @@
 		<script src="js/jq.js"></script>
 		<script src="js/main.js"></script>
 	</head>
-	<body id="top">
+	<body>
 		<div class="filters">
 			<h2><a href="#top">Filters</a></h2>
 			<ul>
