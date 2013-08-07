@@ -5,10 +5,21 @@
 		<title>Cube testing</title>
 		<link rel="stylesheet" href="css/bs.css">
 		<link rel="stylesheet" href="css/styles.css">
-		<!--<script src="js/jq.js"></script>
-		<script src="js/main.js"></script>-->
+		<script src="js/jq.js"></script>
+		<script src="js/main.js"></script>
 	</head>
-	<body>
+	<body id="top">
+		<div class="filters">
+			<h2><a href="#top">Filters</a></h2>
+			<ul>
+				<li><a href="#all">All</a></li>
+				<li><a href="#debug">Debug</a></li>
+				<li><a href="#info">Info</a></li>
+				<li><a href="#warning">Warning</a></li>
+				<li><a href="#error">Error</a></li>
+			</ul>
+			<div class="close">x</div>
+		</div>
 		<div class="logs">
 
 			<?php Logger::display() ?>

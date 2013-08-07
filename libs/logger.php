@@ -13,7 +13,7 @@ class Logger {
 	/**
 	 * Log level
 	 */
-	public static $logLvl = self::DEBUG;
+	public static $logLvl = self::INFO;
 
 	/**
 	 * Contient tous les logs à afficher
@@ -61,10 +61,45 @@ class Logger {
 	 */
 	public static function display() {
 		foreach (self::$logs as $log) {
-			if(self::$logLvl <= $log['type']) {
-				echo self::_format($log['msg'], $log['title'], $log['type']);
+			echo self::_format($log['msg'], $log['title'], $log['type'], self::$logLvl > $log['type']);
+		}
+	}
+
+	public static function lvlToStr($type = null) {
+		if($type === null) {
+			$type = self::$logLvl;
+		}
+
+		switch ($type) {
+			case self::DEBUG:
+				return 'debug';
+			case self::INFO:
+				return 'info';
+			case self::WARNING:
+				return 'warning';
+			case self::ERROR:
+				return 'error';
+		}
+	}
+
+	public static function save() {
+		$i = 0;
+		foreach (self::$logs as $log) {
+			if($log['type'] >= self::$logLvl) {
+				$data[$i] = '[' . strtoupper(self::lvlToStr($log['type'])) . '] ';
+				if($log['title']) {
+					$data[$i] .= $log['title'] . ', ';
+				}
+				$data[$i] .= $log['msg'];
+				$i++;
 			}
 		}
+		$date = date('d-m-Y_h-i-s');
+		$header = "================================\n";
+		$header .= "  Logs du $date\n";
+		$header .= "================================\n\n";
+		file_put_contents(LOG_DIR . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
+		self::_clearLogs();
 	}
 
 	/**
@@ -78,35 +113,34 @@ class Logger {
 	}
 
 	/**
-	 * Formatte les logs pour l'affichage
-	 * @param  str $msg   Contenu du log
-	 * @param  str $title Titre du log (optionel)
-	 * @param  int $type  Type de log
+	 * Formate les logs pour l'affichage
+	 * @param  str  $msg    Contenu du log
+	 * @param  str  $title  Titre du log (optionel)
+	 * @param  int  $type   Type de log
+	 * @param  bool $hidden Masque le contenu par défaut
 	 * @return str Code html
 	 */
-	protected static function _format($msg, $title, $type) {
-		switch ($type) {
-			case self::DEBUG:
-				$type = 'debug';
-				break;
-			case self::INFO:
-				$type = 'info';
-				break;
-			case self::WARNING:
-				$type = 'warning';
-				break;
-			case self::ERROR:
-				$type = 'danger';
-				break;
-		}
+	protected static function _format($msg, $title, $type, $hidden) {
+		$type = self::lvlToStr($type);
 
-		$html = '<div class="callout callout-' . $type . '">';
+		$html = '<div class="callout callout-' . $type . '" style="display:';
+		$html .= ($hidden ? 'none' : 'block') . '">';
 		if($title !== null) {
 			$html .= "<h4>$title</h4>";
 		}
+		$html .= '<span class="close">x</span>';
 		$html .= "<p>$msg</p>";
 
 		return $html . "</div>";
+	}
+
+	protected static function _clearLogs($max = 5) {
+		$exclude = array('.', '..');
+		$logs = array_diff(scandir(LOG_DIR), $exclude);
+		sort($logs);
+		for ($i = 0; $i < count($logs) - $max; $i++) {
+			unlink(LOG_DIR . DS . $logs[$i]);
+		}
 	}
 
 }

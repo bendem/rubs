@@ -20,6 +20,7 @@ class Cube {
 	public function end() {
 		$content = ob_get_clean();
 		require HTML_DIR . DS . 'layout.php';
+		Logger::save();
 	}
 
 }

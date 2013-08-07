@@ -9,6 +9,7 @@ trait Generator {
 	 * @return [type] [description]
 	 */
 	public function generate() {
+		Logger::info('Generating cube...');
 		foreach ($this->colors as $color) {
 			$this->cube[] = $this->generatePlainFace($color);
 		}
@@ -34,6 +35,11 @@ trait Generator {
 	 * Fait tourner les faces du cube aléatoirement
 	 */
 	public function randomize() {
+		Logger::info('Randomizing...');
+		$rand = rand(50, 100);
+		for ($i = 0; $i < $rand; $i++) {
+			$this->rotate(rand(0, 5), rand(0, 1), rand(1, 2));
+		}
 	}
 
 }
