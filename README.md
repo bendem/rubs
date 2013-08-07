@@ -19,3 +19,5 @@ Si j'ai du courage / de la chance, je finirai peut-être par coder l'algorythme 
 
 ## Aperçu du projet en image
 
+![Cube](https://raw.github.com/bendem/rubs/master/img/rubs-cube.png)
+![Interface](https://raw.github.com/bendem/rubs/master/img/rubs-interface.png)
