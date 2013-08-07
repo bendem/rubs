@@ -9,10 +9,13 @@ Si j'ai du courage / de la chance, je finirai peut-être par coder l'algorythme 
 ## FAQ
 
 + Es-tu fou ?
-- Bien sur !
+  + Bien sur !
 
 + Possèdes-tu un rubik's
-- Bien sur ;)
+  + Bien sur ;)
 
 + Sais-tu le résoudre ?
-- Bien sur ^^
+  + Bien sur ^^
+
+## Aperçu du projet en image
+
