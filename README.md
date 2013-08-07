@@ -21,3 +21,10 @@ Si j'ai du courage / de la chance, je finirai peut-être par coder l'algorythme 
 
 ![Cube](https://raw.github.com/bendem/rubs/master/img/rubs-cube.png)
 ![Interface](https://raw.github.com/bendem/rubs/master/img/rubs-interface.png)
+
+## TODO
+
++ Ajouter des exceptions personnalisées utilisant le logger
++ Finir la classe `Security`
++ Lancer des exceptions depuis la classe `Security`
++ Documenter la classe `Security` (utilisé `@throw`)

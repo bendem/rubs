@@ -23,9 +23,20 @@ trait Getter {
 		}
 	}
 
+	/**
+	 * Retourne une face du cube
+	 * @param  int    $face Numéro de la face
+	 * @param  array  $data Si précisé, remplace la face par celle-ci
+	 * @return array  Face du cube
+	 */
 	public function face($face, array $data = array()) {
 		if(!empty($data)) {
-			$this->cube[$face] = $data;
+			if($this->security->is_face($data)) {
+				$this->cube[$face] = $data;
+			} else {
+				throw new IllegalArgumenException("Face incorrect");
+
+			}
 		}
 
 		return $this->cube[$face];
