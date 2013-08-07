@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Code gérant l'affichage du cube
  */

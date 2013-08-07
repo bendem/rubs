@@ -9,7 +9,7 @@ define('LOG_DIR', ROOT . DS . 'logs');
 require LIBS_DIR . DS . 'includes.php';
 require 'cube.php';
 
-$cube = new Cube();
+$cube = new Rubs\Cube();
 
 $cube->display();
 $cube->randomize();

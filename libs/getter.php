@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Code permettant de récupérer des informations sur le cube,
  * ses face, ses blocks
@@ -35,7 +37,6 @@ trait Getter {
 				$this->cube[$face] = $data;
 			} else {
 				throw new IllegalArgumenException("Face incorrect");
-
 			}
 		}
 

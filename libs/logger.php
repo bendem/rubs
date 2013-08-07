@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Système de logging
  * @author bendem <bendembd@gmail.com>
@@ -94,11 +96,14 @@ class Logger {
 				if($log['title']) {
 					$data[$i] .= $log['title'] . ', ';
 				}
+				if(!preg_match('#[\.!?]$#', $log['msg']) && $log['type'] >= self::WARNING) {
+					$log['msg'] .= '...';
+				}
 				$data[$i] .= $log['msg'];
 				$i++;
 			}
 		}
-		$date = date('d-m-Y_h-i-s');
+		$date = date('h-i-s_d-m-Y');
 		$header = "================================\n";
 		$header .= "  Logs du $date\n";
 		$header .= "================================\n\n";

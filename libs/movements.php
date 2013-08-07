@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Code gérant les mouvements des faces du cube
  */
@@ -18,8 +20,8 @@ trait Movements {
 		// TODO : Rotating
 
 		$adj = $this->adjacentsFaces($face);
-		var_dump($face);
-		var_dump($adj);
+		// var_dump($face);
+		// var_dump($adj);
 
 		if($times > 1) {
 			$this->rotate($face, $direction, $times - 1);

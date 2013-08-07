@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Code permettant la génération du cube
  */

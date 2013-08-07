@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs;
+
 /**
  * Code vérifiant la validité des données du cube...
  */
@@ -29,6 +31,13 @@ class Security {
 	}
 
 	public function is_line(array $line) {
+		if(count($line) == 3) {
+			return true;
+		} else {
+			throw new InvalidLineException();
+
+			return false;
+		}
 		return count($line == 3);
 	}
 

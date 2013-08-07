@@ -96,7 +96,7 @@ div {
 	margin-right: 5px;
 	border-right: 3px solid #888;
 }
-.cube:last-child {
+.cube:last-of-type {
 	padding-right: 0;
 	margin-right: 0;
 	border: none;
