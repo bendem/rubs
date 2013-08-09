@@ -19,7 +19,7 @@ class Logger {
 	/**
 	 * Log level
 	 */
-	public static $logLvl = self::INFO;
+	public static $logLvl = self::DEBUG;
 
 	/**
 	 * Contient tous les logs à afficher
@@ -103,6 +103,7 @@ class Logger {
 				$i++;
 			}
 		}
+		// TODO Fix de la date pour pouvoir trier correctement les logs !
 		$date = date('h-i-s_d-m-Y');
 		$header = "================================\n";
 		$header .= "  Logs du $date\n";
