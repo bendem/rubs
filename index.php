@@ -12,7 +12,7 @@ require 'cube.php';
 $cube = new Rubs\Cube();
 
 $cube->display();
-$cube->randomize();
+$cube->randomize(5, 15);
 $cube->display();
 
 $cube->end();
