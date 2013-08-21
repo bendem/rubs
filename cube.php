@@ -8,6 +8,7 @@ class Cube {
 
 	protected $cube = [];
 	protected $ended = false;
+	protected $security;
 
 	/**
 	 * Commence l'écoute html et génère le cube
