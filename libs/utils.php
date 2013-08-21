@@ -4,12 +4,23 @@ namespace Rubs;
 
 class Utils {
 
+	/**
+	 * Inverse deux variables
+	 * @param  mixed $a
+	 * @param  mixed $b
+	 */
 	public static function reverse(&$a, &$b) {
 		$temp = $a;
 		$a = $b;
 		$b = $temp;
 	}
 
+	/**
+	 * Réorganise un tableau en se basant sur ``array_values``
+	 * @param  array   $array     Tableau à réorganiser
+	 * @param  boolean $recursive Réorganiser le tableau de manière récursive ?
+	 * @return array
+	 */
 	public static function array_reorder(array $array, $recursive = true) {
 		if(empty($array)) {
 			return $array;
@@ -24,6 +35,10 @@ class Utils {
 		return array_values($array);
 	}
 
+	/**
+	 * Affiche un tableau 2d sous forme de tableau html
+	 * @param  array  $array Tableau à afficher
+	 */
 	public static function array_display_2d(array $array) {
 		if(empty($array) || empty($array[0]) || !is_array($array[0])) {
 			return;
@@ -43,6 +58,12 @@ class Utils {
 		echo "</table>";
 	}
 
+	/**
+	 * Retourne le contenu d'un tableau sous forme de chaine de caractères
+	 * @param  array   $array Tableau à afficher
+	 * @param  boolean $keys  Afficher les clés dans le tableau ?
+	 * @return string
+	 */
 	public static function array_string(array $array, $keys = false) {
 		$str = '[';
 		foreach ($array as $k => $v) {

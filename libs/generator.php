@@ -7,6 +7,10 @@ namespace Rubs;
  */
 trait Generator {
 
+	/**
+	 * Couleurs utilisées par les cube
+	 * @var array
+	 */
 	public $colors = ['w', 'g', 'r', 'b', 'o', 'y'];
 
 	/**

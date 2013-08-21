@@ -7,6 +7,10 @@ namespace Rubs;
  */
 class Security {
 
+	/**
+	 * Couleurs valides
+	 * @var array
+	 */
 	protected $_colors;
 
 	/**
