@@ -32,12 +32,12 @@ trait Movements {
 			$face, $clockWise ? '' : 'counter', $times, $times > 1 ? 's' : ''));
 
 		// Inutile de faire plusieurs tours...
-		if($times > 3) {
+		if ($times > 3) {
 			$times %= 4;
 		}
 
 		// On inverse la direction en tournant 3x dans le sens par défaut
-		if($clockWise) {
+		if ($clockWise) {
 			$times = 4 - $times;
 		}
 

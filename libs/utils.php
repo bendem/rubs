@@ -22,7 +22,7 @@ class Utils {
 	 * @return array
 	 */
 	public static function array_reorder(array $array, $recursive = true) {
-		if(empty($array)) {
+		if (empty($array)) {
 			return $array;
 		}
 
@@ -40,7 +40,7 @@ class Utils {
 	 * @param  array  $array Tableau à afficher
 	 */
 	public static function array_display_2d(array $array) {
-		if(empty($array) || empty($array[0]) || !is_array($array[0])) {
+		if (empty($array) || empty($array[0]) || !is_array($array[0])) {
 			return;
 		}
 
@@ -48,7 +48,7 @@ class Utils {
 		foreach ($array as $k => $row) {
 			echo "<tr>";
 			foreach ($row as $v) {
-				if(is_array($v)) {
+				if (is_array($v)) {
 					$v = self::array_string($v);
 				}
 				echo "<td>$v</td>";
@@ -67,10 +67,10 @@ class Utils {
 	public static function array_string(array $array, $keys = false) {
 		$str = '[';
 		foreach ($array as $k => $v) {
-			if(is_array($v)) {
+			if (is_array($v)) {
 				$v = self::array_string($v);
 			}
-			if($keys) {
+			if ($keys) {
 				$str .= "$k => ";
 			}
 			$str .= "$v, ";

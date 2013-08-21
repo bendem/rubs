@@ -39,7 +39,7 @@ trait Display {
 	 * @param  bool  $face Si faux, affiche une face vide (utile pour l'affichage)
 	 */
 	protected function _displayFace($face = false) {
-		if($face) {
+		if ($face) {
 			echo '<div class="face face' . $this->_face_number . '" data-face="' . $this->_face_number . '">';
 			$this->_displayLine($face[0]);
 			$this->_displayLine($face[1], $this->_face_number);
@@ -61,7 +61,7 @@ trait Display {
 	 */
 	protected function _displayLine($line = false, $face_number = null) {
 		echo '<div class="line">';
-		if($line) {
+		if ($line) {
 				$this->_displaySquare($line[0]);
 				$this->_displaySquare($line[1], $face_number);
 				$this->_displaySquare($line[2]);

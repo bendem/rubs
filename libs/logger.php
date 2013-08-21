@@ -91,12 +91,12 @@ class Logger {
 	public static function save() {
 		$i = 0;
 		foreach (self::$logs as $log) {
-			if($log['type'] >= self::$logLvl) {
+			if ($log['type'] >= self::$logLvl) {
 				$data[$i] = '[' . strtoupper(self::lvlToStr($log['type'])) . '] ';
-				if($log['title']) {
+				if ($log['title']) {
 					$data[$i] .= $log['title'] . ', ';
 				}
-				if(!preg_match('#[\.!?]$#', $log['msg']) && $log['type'] >= self::WARNING) {
+				if (!preg_match('#[\.!?]$#', $log['msg']) && $log['type'] >= self::WARNING) {
 					$log['msg'] .= '...';
 				}
 				$data[$i] .= $log['msg'];
@@ -114,9 +114,9 @@ class Logger {
 
 	/**
 	 * Ajoute un log à l'objet
-	 * @param  str $msg   Contenu du log
-	 * @param  str $title Titre du log (optionel)
-	 * @param  int $type  Type de log
+	 * @param str $msg   Contenu du log
+	 * @param str $title Titre du log (optionel)
+	 * @param int $type  Type de log
 	 */
 	protected static function _log($msg, $title, $type) {
 		self::$logs[] = ['msg' => $msg, 'title' => $title, 'type' => $type];
@@ -135,7 +135,7 @@ class Logger {
 
 		$html = '<div class="callout callout-' . $type . '" style="display:';
 		$html .= ($hidden ? 'none' : 'block') . '">';
-		if($title !== null) {
+		if ($title !== null) {
 			$html .= "<h4>$title</h4>";
 		}
 		$html .= '<span class="close">x</span>';

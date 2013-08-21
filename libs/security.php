@@ -19,10 +19,10 @@ class Security {
 	 * @throws InvalidColorException
 	 */
 	public function __construct(array $colors) {
-		if(count($colors) == 6) {
+		if (count($colors) == 6) {
 			$checkedColors = [];
 			foreach ($colors as $color) {
-				if(in_array($color, $checkedColors)) {
+				if (in_array($color, $checkedColors)) {
 					throw new InvalidColorException('Les 6 couleurs doivent être différentes');
 				} else {
 					$checkedColors[] = $color;
@@ -42,7 +42,7 @@ class Security {
 	 * @throws InvalidFaceException
 	 */
 	public function is_face(array $face) {
-		if(count($face) != 3) {
+		if (count($face) != 3) {
 			throw new InvalidFaceException();
 			return false;
 		}
@@ -64,7 +64,7 @@ class Security {
 	 * @throws InvalidLineException
 	 */
 	public function is_line(array $line) {
-		if(count($line) == 3) {
+		if (count($line) == 3) {
 			return true;
 		}
 		throw new InvalidLineException();
@@ -79,6 +79,8 @@ class Security {
 	 *
 	 * @todo Implementing it
 	 */
-	public function is_solvable($cube) {}
+	public function is_solvable($cube) {
+		//
+	}
 
 }

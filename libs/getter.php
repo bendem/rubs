@@ -32,8 +32,8 @@ trait Getter {
 	 * @return array  Face du cube
 	 */
 	public function face($face, array $data = array()) {
-		if(!empty($data)) {
-			if($this->security->is_face($data)) {
+		if (!empty($data)) {
+			if ($this->security->is_face($data)) {
 				$this->cube[$face] = $data;
 			} else {
 				throw new IllegalArgumenException("Face incorrect");
@@ -50,7 +50,7 @@ trait Getter {
 	 */
 	public function adjacentsFaces($face) {
 		// ``array_values`` sert à réattribuer correctement les indices...
-		return array_values(array_diff([0, 1, 2, 3, 4, 5], [$face, $this->oppositeFace($face)]));
+		return array_values(array_diff(range(0, 5), [$face, $this->oppositeFace($face)]));
 	}
 
 	/**
@@ -63,4 +63,5 @@ trait Getter {
 	 */
 	public function adjacentsBlocks($face1, $face2) {
 	}
+
 }

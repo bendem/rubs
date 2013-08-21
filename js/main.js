@@ -10,7 +10,7 @@ jQuery(function($) {
 		$('.filters li a').removeClass('active');
 		$(this).addClass('active');
 
-		if(target == 'all') {
+		if (target == 'all') {
 			$('.callout').stop().show(400);
 		} else {
 			$('.callout:not(.callout-' + target + ')').slideUp(400);
