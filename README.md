@@ -17,10 +17,9 @@ Si j'ai du courage / de la chance, je finirai peut-être par coder l'algorythme 
 + Sais-tu le résoudre ?
   + Bien sur ^^
 
-## Aperçu du projet en image
+## See it in action
 
-![Cube](https://raw.github.com/bendem/rubs/master/img/rubs-cube.png)
-![Interface](https://raw.github.com/bendem/rubs/master/img/rubs-interface.png)
+Pour le moment, il n'y a pas grand chose à voir, mais [voici](http://rubs.bendem.be/) ;-)
 
 ## TODO
 
