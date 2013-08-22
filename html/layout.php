@@ -18,6 +18,9 @@
 				<li><a href="#warning">Warning</a></li>
 				<li><a href="#error">Error</a></li>
 			</ul>
+			<ul class="pull-right">
+				<li><a href="logs">Logs</a></li>
+			</ul>
 			<div class="close">x</div>
 		</div>
 		<div class="logs">

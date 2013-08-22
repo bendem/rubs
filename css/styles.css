@@ -12,6 +12,12 @@ div {
 	margin: 0;
 	padding: 0;
 }
+.pull-right {
+	float: right;
+}
+.pull-left {
+	float: left;
+}
 .content {
 	padding-top: 80px;
 	text-align: center;
@@ -62,6 +68,9 @@ div {
 }
 .filters ul li a.active {
 	border-bottom: 3px solid #999;
+}
+.filters .pull-right {
+	margin-right: 50px;
 }
 .filters .close {
 	position: absolute;

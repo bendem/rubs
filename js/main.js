@@ -2,12 +2,12 @@ jQuery(function($) {
 	// TODO : Modéliser le cube en 3D / le faire tourner...
 
 	// Filters
-	$('.filters li a').click(function(e) {
+	$('.filters li a[href^=#]').click(function(e) {
 		e.preventDefault();
 		var target;
 
 		target = $(this).attr('href').substring(1);
-		$('.filters li a').removeClass('active');
+		$('.filters li a[href^=#]').removeClass('active');
 		$(this).addClass('active');
 
 		if (target == 'all') {
