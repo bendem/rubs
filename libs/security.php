@@ -54,7 +54,7 @@ class Security {
 	}
 
 	public function is_face_number($number) {
-		if(!in_array($number, range(0, 5))) {
+		if($number < 0 || $number > 5) {
 			throw new InvalidFaceNumberException();
 		}
 
