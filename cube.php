@@ -4,7 +4,7 @@ namespace Rubs;
 
 class Cube {
 
-	use Movements, Generator, Display, Logic, Getter;
+	use Movements, Generator, Display, Logic, Getter, Setter;
 
 	protected $cube = [];
 	protected $ended = false;
