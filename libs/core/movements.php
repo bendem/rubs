@@ -54,13 +54,11 @@ trait Movements {
 		// du coup on le réorganise
 		$newFace = Utils::array_reorder($newFace);
 
-		// On n'oublie de vérifier que la face est valide
-		// TODO créer des setter qui vérifie automatiquement
-		$this->security->is_face($newFace);
-		$this->cube[$face] = $newFace;
+		// On sauve la nouvelle face
+		$this->setFace($face, $newFace);
 
 		// TODO : Rotate each adjacent line
-		$adjecentFaces = $this->adjacentsFaces($face);
+		$adjecentFaces = $this->getAdjacentsFaces($face);
 		foreach ($adjecentFaces as $adjecentFace) {
 			//
 		}

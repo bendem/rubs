@@ -8,7 +8,7 @@ namespace Rubs;
  */
 trait Getter {
 
-	public function oppositeFace($face) {
+	public function getOppositeFace($face) {
 		switch ($face) {
 			case 0:
 				return 5;
@@ -28,18 +28,9 @@ trait Getter {
 	/**
 	 * Retourne une face du cube
 	 * @param  int    $face Numéro de la face
-	 * @param  array  $data Si précisé, remplace la face par celle-ci
 	 * @return array  Face du cube
 	 */
-	public function face($face, array $data = array()) {
-		if (!empty($data)) {
-			if ($this->security->is_face($data)) {
-				$this->cube[$face] = $data;
-			} else {
-				throw new IllegalArgumenException("Face incorrect");
-			}
-		}
-
+	public function getFace($face) {
 		return $this->cube[$face];
 	}
 
@@ -48,9 +39,9 @@ trait Getter {
 	 * @param  int $face Numéro de la face
 	 * @return array
 	 */
-	public function adjacentsFaces($face) {
+	public function getAdjacentsFaces($face) {
 		// ``array_values`` sert à réattribuer correctement les indices...
-		return array_values(array_diff(range(0, 5), [$face, $this->oppositeFace($face)]));
+		return array_values(array_diff(range(0, 5), [$face, $this->getOppositeFace($face)]));
 	}
 
 	/**
@@ -61,7 +52,7 @@ trait Getter {
 	 *
 	 * @todo  implementing it
 	 */
-	public function adjacentsBlocks($face1, $face2) {
+	public function getAdjacentsBlocks($face1, $face2) {
 	}
 
 }

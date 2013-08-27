@@ -19,19 +19,18 @@ class Security {
 	 * @throws InvalidColorException
 	 */
 	public function __construct(array $colors) {
-		if (count($colors) == 6) {
-			$checkedColors = [];
-			foreach ($colors as $color) {
-				if (in_array($color, $checkedColors)) {
-					throw new InvalidColorException('Les 6 couleurs doivent être différentes');
-				} else {
-					$checkedColors[] = $color;
-				}
-			}
-			$this->_colors = $colors;
-		} else {
+		if (count($colors) != 6) {
 			throw new InvalidColorException("6 Couleurs... Pas plus pas moins");
 		}
+
+		$checkedColors = [];
+		foreach ($colors as $color) {
+			if (in_array($color, $checkedColors)) {
+				throw new InvalidColorException('Les 6 couleurs doivent être différentes');
+			}
+			$checkedColors[] = $color;
+		}
+		$this->_colors = $colors;
 	}
 
 	/**
@@ -44,13 +43,19 @@ class Security {
 	public function is_face(array $face) {
 		if (count($face) != 3) {
 			throw new InvalidFaceException();
-			return false;
 		}
 		foreach ($face as $line) {
 			if(!$this->is_line($line)) {
 				throw new InvalidFaceException();
-				return false;
 			}
+		}
+
+		return true;
+	}
+
+	public function is_face_number($number) {
+		if(!in_array($number, range(0, 5))) {
+			throw new InvalidFaceNumberException();
 		}
 
 		return true;
@@ -67,9 +72,8 @@ class Security {
 		if (count($line) == 3) {
 			return true;
 		}
-		throw new InvalidLineException();
 
-		return false;
+		throw new InvalidLineException();
 	}
 
 	/**
