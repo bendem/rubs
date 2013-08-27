@@ -19,8 +19,8 @@ trait Generator {
 	 */
 	public function generate() {
 		Logger::info('Generating cube...');
-		foreach ($this->colors as $color) {
-			$this->cube[] = $this->generatePlainFace($color);
+		foreach ($this->colors as $k => $color) {
+			$this->setFace($k, $this->generatePlainFace($color));
 		}
 		Logger::info('Cube generated');
 	}
