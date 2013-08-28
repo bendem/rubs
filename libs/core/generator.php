@@ -47,6 +47,7 @@ trait Generator {
 	public function randomize($min = 50, $max = 100) {
 		Logger::info('Randomizing...');
 		$rand = rand($min, $max);
+
 		for ($i = 0; $i < $rand; $i++) {
 			$this->rotate(rand(0, 5), rand(0, 1), rand(1, 2));
 		}
