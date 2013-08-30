@@ -13,11 +13,7 @@ trait Movements {
 	 *
 	 * @var array
 	 */
-	protected $_rotatingPattern = [
-		[ [0, 2], [1, 2], [2, 2] ],
-		[ [0, 1], [1, 1], [2, 1] ],
-		[ [0, 0], [1, 0], [2, 0] ]
-	];
+	protected $_rotationPatterns = [];
 
 	/**
 	 * Fait tourner une des faces du cube
@@ -73,6 +69,12 @@ trait Movements {
 	 * @return array
 	 */
 	protected function _generateRotationPattern($angle) {
+		if(isset($this->_rotationPatterns[$angle])) {
+			return $this->_rotationPatterns[$angle];
+		}
+
+		Logger::debug('Generating ' . $angle . '° rotation pattern...');
+
 		$rotationPattern = [];
 		$rotationMatrix = [
 			[(int)cos(deg2rad($angle)), (int)sin(deg2rad($angle))],
@@ -91,6 +93,8 @@ trait Movements {
 				$rotationPattern[$i][$j] = $coord;
 			}
 		}
+
+		$this->_rotationPatterns[$angle] = $rotationPattern;
 
 		return $rotationPattern;
 	}
