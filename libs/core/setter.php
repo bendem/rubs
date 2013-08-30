@@ -9,11 +9,10 @@ namespace Rubs;
 trait Setter {
 
 	public function setFace($face, $data) {
-		if ($this->security->is_face($data) && $this->security->is_face_number($face)) {
-			$this->cube[$face] = $data;
-		} else {
-			throw new InvalidFaceException("Face incorrect");
-		}
+		$this->security->is_face($data);
+		$this->security->is_face_number($face);
+
+		$this->cube[$face] = $data;
 	}
 
 	public function setLine($face, $line, $data) {
