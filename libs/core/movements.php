@@ -8,8 +8,7 @@ namespace Rubs;
 trait Movements {
 
 	/**
-	 * Pattern utilisé pour la rotation d'une face
-	 * Le cube situé en (0, 0) ira en (0, 2) et ainsi de suite
+	 * Patterns utilisés pour la rotation d'un face du cube
 	 *
 	 * @var array
 	 */
