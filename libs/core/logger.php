@@ -103,7 +103,7 @@ class Logger {
 				$i++;
 			}
 		}
-		// TODO Fix de la date pour pouvoir trier correctement les logs !
+
 		$date = date('Y-m-d_H-i-s');
 		$header = "================================\n";
 		$header .= "  Logs du $date\n";

@@ -26,4 +26,4 @@ Pour le moment, il n'y a pas grand chose à voir, mais [voici](http://rubs.bende
 + Ajouter des exceptions personnalisées utilisant le logger
 + Finir la classe `Security`
 + Lancer des exceptions depuis la classe `Security`
-+ Documenter la classe `Security` (utilisé `@throw`)
++ Documenter la classe `Security` (utiliser `@throw`)
