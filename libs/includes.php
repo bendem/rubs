@@ -28,6 +28,7 @@ class Loader {
 	}
 
 	protected static function _loadFile($path) {
+		$path = realpath($path);
 		if(in_array($path, self::$_loaded)) {
 			return false;
 		}
