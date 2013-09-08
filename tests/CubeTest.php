@@ -1,6 +1,6 @@
 <?php
 
-require_once(APP . DS . 'libs' . DS . 'cube.php');
+Rubs\loader::uses('Rubs\Cube');
 
 class CubeTest extends PHPUnit_Framework_TestCase {
 

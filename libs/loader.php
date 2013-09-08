@@ -81,6 +81,3 @@ class Loader {
 	}
 
 }
-
-
-Loader::uses('Cube');
