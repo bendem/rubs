@@ -1,6 +1,6 @@
 <?php
 
-require_once('../libs/cube.php');
+require_once(APP . DS . 'libs' . DS . 'cube.php');
 
 class CubeTest extends PHPUnit_Framework_TestCase {
 
