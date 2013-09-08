@@ -89,6 +89,10 @@ class Logger {
 	}
 
 	public static function save() {
+		if(!is_dir(APP . DS . 'logs')) {
+			mkdir(APP . DS . 'logs', 0775);
+		}
+
 		$i = 0;
 		foreach (self::$logs as $log) {
 			if ($log['type'] >= self::$logLvl) {
