@@ -5,3 +5,7 @@ php:
 
 script:
     - phpunit -c tests/phpunit.xml
+
+notifications:
+    on_success: never
+    on_failure: never
