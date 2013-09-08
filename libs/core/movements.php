@@ -58,10 +58,13 @@ trait Movements {
 		// On sauve la nouvelle face
 		$this->setFace($face, $newFace);
 
-		// TODO : Rotate each adjacent line
-		$adjacentFaces = $this->getAdjacentsFaces($face);
-		foreach ($adjacentFaces as $adjacentFace) {
-			//
+		// TODO : faire tourner les lignes adjacentes
+		$adjacentFaces = $this->getRoundedAdjacentsFaces($face);
+		foreach ($adjacentFaces as $cur => $adj) {
+			// TODO : Vérifier si on ne passe pas une ligne dans une colonne...
+			$info = $this->getAdjacentLine($face, $adj);
+			var_dump($info);
+			// $this->setLine($adjacentFaces[($cur + 1) % 6], ???,  $lineToMove);
 		}
 	}
 
