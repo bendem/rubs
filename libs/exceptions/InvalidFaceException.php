@@ -2,6 +2,8 @@
 
 namespace Rubs\Exceptions;
 
+\Rubs\Loader::uses('Rubs\Exceptions\Exception');
+
 class InvalidFaceException extends Exception {
 
 	public function __construct() {

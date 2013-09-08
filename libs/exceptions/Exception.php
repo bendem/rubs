@@ -2,6 +2,8 @@
 
 namespace Rubs\Exceptions;
 
+\Rubs\Loader::uses('Rubs\Core\Logger');
+
 class Exception extends \Exception {
 
 	public function __construct($message) {
