@@ -5,7 +5,7 @@
  * @param  str $name Nom de la classe à charger
  */
 // function autoload($name) {
-// 	require LIBS_DIR . DS . strtolower($name) . '.php';
+// 	require APP . DS . 'libs' . DS . strtolower($name) . '.php';
 // 	Logger::debug("$name loaded...");
 // }
 
@@ -20,4 +20,4 @@ function loadDir($dir) {
 	}
 }
 
-loadDir(LIBS_DIR);
+loadDir(APP . DS . 'libs');

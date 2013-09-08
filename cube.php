@@ -26,7 +26,7 @@ class Cube {
 		if(!$this->ended) {
 			$this->ended = true;
 			$content = ob_get_clean();
-			require HTML_DIR . DS . 'layout.php';
+			require APP . DS . 'html' . DS . 'layout.php';
 			Logger::save();
 		}
 	}

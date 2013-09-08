@@ -108,7 +108,7 @@ class Logger {
 		$header = "================================\n";
 		$header .= "  Logs du $date\n";
 		$header .= "================================\n\n";
-		file_put_contents(LOG_DIR . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
+		file_put_contents(APP . DS . 'logs' . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
 		self::_clearLogs();
 	}
 
@@ -145,11 +145,12 @@ class Logger {
 	}
 
 	protected static function _clearLogs($max = 5) {
+		$path = APP . DS . 'logs';
 		$exclude = array('.', '..');
-		$logs = array_diff(scandir(LOG_DIR), $exclude);
+		$logs = array_diff(scandir($path), $exclude);
 		sort($logs);
 		for ($i = 0; $i < count($logs) - $max; $i++) {
-			unlink(LOG_DIR . DS . $logs[$i]);
+			unlink($path . DS . $logs[$i]);
 		}
 	}
 

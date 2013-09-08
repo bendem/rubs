@@ -1,12 +1,9 @@
 <?php
 
 define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', dirname(__FILE__));
-define('LIBS_DIR', ROOT . DS . 'libs');
-define('HTML_DIR', ROOT . DS . 'html');
-define('LOG_DIR', ROOT . DS . 'logs');
+define('APP', dirname(__FILE__));
 
-require LIBS_DIR . DS . 'includes.php';
+require APP . DS . 'libs' . DS . 'includes.php';
 require 'cube.php';
 
 $cube = new Rubs\Cube();
