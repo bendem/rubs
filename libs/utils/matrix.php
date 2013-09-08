@@ -4,56 +4,62 @@ namespace Rubs\Utils;
 
 class Matrix {
 
-	public static function add(array $m1, array $m2) {
-		if (empty($m1) || empty($m2)) {
+	public static function add(array $matrix1, array $matrix2) {
+		if (empty($matrix1) || empty($matrix2)) {
 			return [];
 		}
-		if (!self::_sameSized($m1, $m2)) {
+		if (!self::_sameSized($matrix1, $matrix2)) {
 			return false;
 		}
 
-		foreach ($m1 as $key => $value) {
-			$m1[$key] += $m2[$key];
+		foreach ($matrix1 as $l => $v) {
+			if(is_array($matrix1[$l])) {
+				foreach ($matrix1[$l] as $c => $value) {
+					$matrix1[$l][$c] += $matrix2[$l][$c];
+				}
+			} else {
+				$matrix1[$l] += $matrix2[$l];
+			}
 		}
 
-		return $m1;
+		return $matrix1;
 	}
 
-	public static function multiply($m1, $m2) {
-		if (!is_array($m1[0])) {
-			$m1 = [$m1];
+	public static function multiply($matrix1, $matrix2) {
+		if (!is_array($matrix1[0])) {
+			$matrix1 = [$matrix1];
 		}
-		if (!is_array($m2[0])) {
-			$m2 = [$m2];
-		}
-
-		$m1_rows = count($m1);
-		$m1_cols = count($m1[0]);
-		$m2_rows = count($m2);
-
-		if ($m1_cols != $m2_rows) {
-			throw new Exception('Incompatible matrixes');
+		if (!is_array($matrix2[0])) {
+			$matrix2 = [$matrix2];
 		}
 
-		$m3 = [];
-		for ($i = 0; $i < $m1_rows; $i++){
-			for ($j = 0; $j < $m1_cols; $j++){
-				$m3[$i][$j] = 0;
+		$matrix1_rows = count($matrix1);
+		$matrix1_cols = count($matrix1[0]);
+		$matrix2_rows = count($matrix2);
 
-				for ($k = 0; $k < $m2_rows; $k++) {
-					$m3[$i][$j] += $m1[$i][$k] * $m2[$k][$j];
+		if ($matrix1_cols != $matrix2_rows) {
+			throw new \Exception('Incompatible matrixes');
+		}
+
+		$matrix3 = [];
+		for ($i = 0; $i < $matrix1_rows; $i++){
+			for ($j = 0; $j < $matrix1_cols; $j++){
+				$matrix3[$i][$j] = 0;
+
+				for ($k = 0; $k < $matrix2_rows; $k++) {
+					$matrix3[$i][$j] += $matrix1[$i][$k] * $matrix2[$k][$j];
 				}
 			}
 		}
 
-		return count($m3) == 1 ? current($m3) : $m3;
+		return count($matrix3) == 1 ? current($matrix3) : $matrix3;
 	}
 
-	protected static function _sameSized($m1, $m2) {
-		if (count($m1) != count($m2)) {
+	protected static function _sameSized($matrix1, $matrix2) {
+		if (count($matrix1) != count($matrix2)) {
 			return false;
 		}
-		if (is_array($m1) && count($m1[0]) != count($m2[0])) {
+		if (is_array($matrix1) && count($matrix1[0]) != count($matrix2[0])) {
 			return false;
 		}
 
