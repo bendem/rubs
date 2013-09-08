@@ -17,13 +17,18 @@ class Cube {
 
 	protected $cube = [];
 	protected $ended = false;
-	protected $security;
+	public $security;
+	protected $_skipRendering;
 
 	/**
 	 * Commence l'écoute html et génère le cube
 	 */
-	public function __construct() {
-		ob_start();
+	public function __construct($skip_rendering = false) {
+		$this->_skipRendering = $skip_rendering;
+		if(!$this->_skipRendering) {
+			ob_start();
+		}
+
 		$this->security = new Core\Security($this->colors, $this);
 		$this->generate();
 	}
@@ -34,8 +39,10 @@ class Cube {
 	public function end() {
 		if(!$this->ended) {
 			$this->ended = true;
-			$content = ob_get_clean();
-			require APP . DS . 'html' . DS . 'layout.php';
+			if(!$this->_skipRendering) {
+				$content = ob_get_clean();
+				require APP . DS . 'html' . DS . 'layout.php';
+			}
 			Core\Logger::save();
 		}
 	}
