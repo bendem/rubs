@@ -44,18 +44,18 @@ class Utils {
 			return;
 		}
 
-		echo "<table>";
+		echo '<table style="border-collapse: collapse;">' . "\n";
 		foreach ($array as $k => $row) {
-			echo "<tr>";
+			echo "\t<tr>\n";
 			foreach ($row as $v) {
 				if (is_array($v)) {
 					$v = self::array_string($v);
 				}
-				echo "<td>$v</td>";
+				echo "\t\t<td style=\"border: 1px solid black; padding: 3px;\">$v</td>\n";
 			}
-			echo "</tr>";
+			echo "\t</tr>\n";
 		}
-		echo "</table>";
+		echo "</table>\n";
 	}
 
 	/**
