@@ -24,7 +24,7 @@ class Cube {
 	 */
 	public function __construct() {
 		ob_start();
-		$this->security = new Core\Security($this->colors);
+		$this->security = new Core\Security($this->colors, $this);
 		$this->generate();
 	}
 

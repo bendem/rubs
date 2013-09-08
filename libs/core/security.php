@@ -16,11 +16,17 @@ class Security {
 	protected $_colors;
 
 	/**
+	 * Rubs\Cube
+	 * @var [type]
+	 */
+	protected $_cube;
+
+	/**
 	 * Vérifie si les couleurs sont bien 6 et différentes
 	 * @param array $colors Tableau des 6 couleurs du cube
 	 * @throws InvalidColorException
 	 */
-	public function __construct(array $colors) {
+	public function __construct(array $colors, $cube) {
 		if (count($colors) != 6) {
 			throw new InvalidColorException("6 Couleurs... Pas plus pas moins");
 		}
@@ -33,6 +39,7 @@ class Security {
 			$checkedColors[] = $color;
 		}
 		$this->_colors = $colors;
+		$this->_cube = $cube;
 	}
 
 	/**
@@ -61,6 +68,13 @@ class Security {
 		}
 
 		return true;
+	}
+
+	public function canBeAdjacent($face1, $face2) {
+		if($this->_cube->getOppositeFace($face1) == $face2) {
+			throw new CantBeAdjacentException($face1, $face2);
+
+		}
 	}
 
 	/**
