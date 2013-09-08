@@ -94,7 +94,9 @@ trait Movements {
 				// Centrage des coordonées
 				$coord = \Rubs\Utils\Matrix::add($coord, [-1, -1]);
 				// Rotation
-				$coord = \Rubs\Utils\Matrix::multiply($coord, $rotationMatrix);
+				$coord = \Rubs\Utils\Matrix::multiply($rotationMatrix, $coord);
+				$coord[0] = $coord[0][0];
+				$coord[1] = $coord[1][0];
 				// Décentrage
 				$coord = \Rubs\Utils\Matrix::add($coord, [1, 1]);
 

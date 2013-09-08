@@ -56,8 +56,13 @@ class MatrixTest extends PHPUnit_Framework_TestCase {
 		return [
 			[
 				[3, 6],
-				[3],
-				[1, 2]
+				[[3]],
+				[[1, 2]]
+			],
+			[
+				[[3, 6, 9], [4, 8, 12]],
+				[[3], [4]],
+				[[1, 2, 3]]
 			]
 		];
 	}
