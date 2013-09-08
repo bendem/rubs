@@ -33,6 +33,10 @@ trait Getter {
 		}
 	}
 
+	public function getCube() {
+		return $this->cube;
+	}
+
 	/**
 	 * Retourne une face du cube
 	 * @param  int    $face Numéro de la face
@@ -109,6 +113,7 @@ trait Getter {
 	 * @return string 'left', 'right', 'top', 'bottom'
 	 */
 	public function getRelativePosition($face1, $face2) {
+		// TODO : WIP
 		switch ($face1) {
 			case 0:
 				switch ($face2) {

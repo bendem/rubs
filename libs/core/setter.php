@@ -10,9 +10,14 @@ namespace Rubs\Core;
  */
 trait Setter {
 
+	public function setCube($cube) {
+		$this->security->is_valid_cube($cube);
+		$this->cube = $cube;
+	}
+
 	public function setFace($face, $data) {
-		$this->security->is_face($data);
-		$this->security->is_face_number($face);
+		$this->security->isFace($data);
+		$this->security->isFaceNumber($face);
 
 		$this->cube[$face] = $data;
 	}
