@@ -28,12 +28,12 @@ class Loader {
 	}
 
 	protected static function _loadFile($path) {
-		if(in_array($path, self::$_loaded)) {
+		if(in_array(strtolower($path), self::$_loaded)) {
 			return false;
 		}
 
 		require $path;
-		self::$_loaded[] = $path;
+		self::$_loaded[] = strtolower($path);
 
 		return true;
 	}
