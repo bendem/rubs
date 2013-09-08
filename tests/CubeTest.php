@@ -36,4 +36,9 @@ class CubeTest extends PHPUnit_Framework_TestCase {
 		$this->assertContains('<!DOCTYPE html>', $generatedContent);
 	}
 
+	public function testCubeGeneration() {
+		$cube = new Rubs\Cube(true);
+		$this->assertTrue($this->security->isValidCube($cube->getCube()));
+	}
+
 }
