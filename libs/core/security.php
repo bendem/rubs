@@ -29,13 +29,13 @@ class Security {
 	 */
 	public function __construct(array $colors, \Rubs\Cube $cube) {
 		if (count($colors) != 6) {
-			throw new InvalidColorException("6 Couleurs... Pas plus pas moins");
+			throw new \Rubs\Exceptions\InvalidColorException("6 Couleurs... Pas plus pas moins");
 		}
 
 		$checkedColors = [];
 		foreach ($colors as $color) {
 			if (in_array($color, $checkedColors)) {
-				throw new InvalidColorException('Les 6 couleurs doivent être différentes');
+				throw new \Rubs\Exceptions\InvalidColorException('Les 6 couleurs doivent être différentes');
 			}
 			$checkedColors[] = $color;
 		}
@@ -52,11 +52,11 @@ class Security {
 	 */
 	public function is_face(array $face) {
 		if (count($face) != 3) {
-			throw new InvalidFaceException();
+			throw new \Rubs\Exceptions\InvalidFaceException();
 		}
 		foreach ($face as $line) {
 			if(!$this->is_line($line)) {
-				throw new InvalidFaceException();
+				throw new \Rubs\Exceptions\InvalidFaceException();
 			}
 		}
 
@@ -70,7 +70,7 @@ class Security {
 	 */
 	public function is_face_number($number) {
 		if($number < 0 || $number > 5) {
-			throw new InvalidFaceNumberException();
+			throw new \Rubs\Exceptions\InvalidFaceNumberException();
 		}
 
 		return true;
@@ -84,7 +84,7 @@ class Security {
 	 */
 	public function canBeAdjacent($face1, $face2) {
 		if($this->_cube->getOppositeFace($face1) == $face2) {
-			throw new CantBeAdjacentException($face1, $face2);
+			throw new \Rubs\Exceptions\CantBeAdjacentException($face1, $face2);
 		}
 	}
 
@@ -100,7 +100,7 @@ class Security {
 			return true;
 		}
 
-		throw new InvalidLineException();
+		throw new \Rubs\Exceptions\InvalidLineException();
 	}
 
 	/**
