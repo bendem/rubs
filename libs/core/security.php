@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubs;
+namespace Rubs\Core;
 
 /**
  * Code vérifiant la validité des données du cube...

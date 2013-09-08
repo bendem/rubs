@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubs;
+namespace Rubs\Core;
 
 /**
  * Code gérant les mouvements des faces du cube

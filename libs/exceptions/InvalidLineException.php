@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubs;
+namespace Rubs\Exceptions;
 
 class InvalidLineException extends Exception {
 

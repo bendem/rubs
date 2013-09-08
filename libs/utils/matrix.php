@@ -1,5 +1,7 @@
 <?php
 
+namespace Rubs\Utils;
+
 class Matrix {
 
 	public static function add(array $m1, array $m2) {

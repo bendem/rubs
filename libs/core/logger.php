@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubs;
+namespace Rubs\Core;
 
 /**
  * Système de logging

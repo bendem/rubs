@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubs;
+namespace Rubs\Core;
 
 /**
  * Code contenant la logique de résolution du cube
