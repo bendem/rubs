@@ -59,8 +59,8 @@ trait Movements {
 		$this->setFace($face, $newFace);
 
 		// TODO : Rotate each adjacent line
-		$adjecentFaces = $this->getAdjacentsFaces($face);
-		foreach ($adjecentFaces as $adjecentFace) {
+		$adjacentFaces = $this->getAdjacentsFaces($face);
+		foreach ($adjacentFaces as $adjacentFace) {
 			//
 		}
 	}
