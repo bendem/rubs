@@ -23,7 +23,7 @@ trait Generator {
 	public function generate() {
 		Logger::info('Generating cube...');
 		foreach ($this->colors as $k => $color) {
-			$this->setFace($k, $this->generatePlainFace($color));
+			$this->setFace($k, $this->_generatePlainFace($color));
 		}
 		Logger::info('Cube generated');
 	}
@@ -33,7 +33,7 @@ trait Generator {
 	 * @param  char $color Code couleur de la face
 	 * @return array
 	 */
-	protected function generatePlainFace($color = null) {
+	protected function _generatePlainFace($color = null) {
 		$a = [];
 		for ($i = 0; $i < 3; $i++) {
 			for ($j = 0; $j < 3; $j++) {

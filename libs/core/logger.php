@@ -24,7 +24,7 @@ class Logger {
 	/**
 	 * Contient tous les logs à afficher
 	 */
-	protected static $logs = [];
+	protected static $_logs = [];
 
 	/**
 	 * Ajoute un log de type debug
@@ -66,7 +66,7 @@ class Logger {
 	 * Affiche tous les logs
 	 */
 	public static function display() {
-		foreach (self::$logs as $log) {
+		foreach (self::$_logs as $log) {
 			echo self::_format($log['msg'], $log['title'], $log['type'], self::$logLvl > $log['type']);
 		}
 	}
@@ -94,7 +94,7 @@ class Logger {
 		}
 
 		$i = 0;
-		foreach (self::$logs as $log) {
+		foreach (self::$_logs as $log) {
 			if ($log['type'] >= self::$logLvl) {
 				$data[$i] = '[' . strtoupper(self::lvlToStr($log['type'])) . '] ';
 				if ($log['title']) {
@@ -123,7 +123,7 @@ class Logger {
 	 * @param int $type  Type de log
 	 */
 	protected static function _log($msg, $title, $type) {
-		self::$logs[] = ['msg' => $msg, 'title' => $title, 'type' => $type];
+		self::$_logs[] = ['msg' => $msg, 'title' => $title, 'type' => $type];
 	}
 
 	/**
@@ -151,10 +151,10 @@ class Logger {
 	protected static function _clearLogs($max = 5) {
 		$path = APP . DS . 'logs';
 		$exclude = array('.', '..');
-		$logs = array_diff(scandir($path), $exclude);
-		sort($logs);
-		for ($i = 0; $i < count($logs) - $max; $i++) {
-			unlink($path . DS . $logs[$i]);
+		$_logs = array_diff(scandir($path), $exclude);
+		sort($_logs);
+		for ($i = 0; $i < count($_logs) - $max; $i++) {
+			unlink($path . DS . $_logs[$i]);
 		}
 	}
 
