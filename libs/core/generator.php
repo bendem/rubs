@@ -33,7 +33,7 @@ trait Generator {
 	 * @param  char $color Code couleur de la face
 	 * @return array
 	 */
-	protected function _generatePlainFace($color = null) {
+	protected function _generatePlainFace($color) {
 		$a = [];
 		for ($i = 0; $i < 3; $i++) {
 			for ($j = 0; $j < 3; $j++) {
