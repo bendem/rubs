@@ -2,15 +2,14 @@
 
 namespace Rubs;
 
-Loader::uses('Rubs\\Core\\Display');
-Loader::uses('Rubs\\Core\\Generator');
-Loader::uses('Rubs\\Core\\Getter');
-Loader::uses('Rubs\\Core\\Logger');
-Loader::uses('Rubs\\Core\\Logic');
-Loader::uses('Rubs\\Core\\Movements');
-Loader::uses('Rubs\\Core\\Security');
-Loader::uses('Rubs\\Core\\Setter');
-
+Loader::uses('Rubs\Core\Display');
+Loader::uses('Rubs\Core\Generator');
+Loader::uses('Rubs\Core\Getter');
+Loader::uses('Rubs\Core\Logger');
+Loader::uses('Rubs\Core\Logic');
+Loader::uses('Rubs\Core\Movements');
+Loader::uses('Rubs\Core\Security');
+Loader::uses('Rubs\Core\Setter');
 
 class Cube {
 

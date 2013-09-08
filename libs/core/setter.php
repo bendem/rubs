@@ -2,7 +2,7 @@
 
 namespace Rubs\Core;
 
-\Rubs\Loader::uses('Rubs\\Core\\Security');
+\Rubs\Loader::uses('Rubs\Core\Security');
 
 /**
  * Code gérant les modifications du cube

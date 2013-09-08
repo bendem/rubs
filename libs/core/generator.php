@@ -2,8 +2,8 @@
 
 namespace Rubs\Core;
 
-\Rubs\Loader::uses('Rubs\\Core\\Logger');
-\Rubs\Loader::uses('Rubs\\Core\\Setter');
+\Rubs\Loader::uses('Rubs\Core\Logger');
+\Rubs\Loader::uses('Rubs\Core\Setter');
 
 /**
  * Code permettant la génération du cube

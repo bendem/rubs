@@ -2,11 +2,11 @@
 
 namespace Rubs\Core;
 
-\Rubs\Loader::uses('Rubs\\Core\\Getter');
-\Rubs\Loader::uses('Rubs\\Core\\Logger');
-\Rubs\Loader::uses('Rubs\\Core\\Setter');
-\Rubs\Loader::uses('Rubs\\Utils\\Matrix');
-\Rubs\Loader::uses('Rubs\\Utils\\Utils');
+\Rubs\Loader::uses('Rubs\Core\Getter');
+\Rubs\Loader::uses('Rubs\Core\Logger');
+\Rubs\Loader::uses('Rubs\Core\Setter');
+\Rubs\Loader::uses('Rubs\Utils\Matrix');
+\Rubs\Loader::uses('Rubs\Utils\Utils');
 
 /**
  * Code gérant les mouvements des faces du cube
