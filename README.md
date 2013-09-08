@@ -1,5 +1,7 @@
 # Rubik's Cube
 
+[![Build Status](https://travis-ci.org/bendem/rubs.png?branch=master)](https://travis-ci.org/bendem/rubs)
+
 ## Le projet
 
 Petit projet coup de tête modélisant un Rubik's en php / html...
