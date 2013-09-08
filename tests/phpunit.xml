@@ -1,0 +1,8 @@
+<phpunit bootstrap="bootstrap.php">
+	<testsuites>
+		<testsuite name="Ma suite de tests">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">CubeTest.php</file>
+		</testsuite>
+	</testsuites>
+</phpunit>
