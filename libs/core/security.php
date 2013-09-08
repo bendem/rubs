@@ -50,12 +50,12 @@ class Security {
 	 *
 	 * @throws InvalidFaceException
 	 */
-	public function is_face(array $face) {
+	public function isFace(array $face) {
 		if (count($face) != 3) {
 			throw new \Rubs\Exceptions\InvalidFaceException();
 		}
 		foreach ($face as $line) {
-			if(!$this->is_line($line)) {
+			if(!$this->isLine($line)) {
 				throw new \Rubs\Exceptions\InvalidFaceException();
 			}
 		}
@@ -68,7 +68,7 @@ class Security {
 	 * @param  int  $number Numéro de face
 	 * @throws InvalidFaceNumberException
 	 */
-	public function is_face_number($number) {
+	public function isFaceNumber($number) {
 		if($number < 0 || $number > 5) {
 			throw new \Rubs\Exceptions\InvalidFaceNumberException();
 		}
@@ -95,12 +95,17 @@ class Security {
 	 *
 	 * @throws InvalidLineException
 	 */
-	public function is_line(array $line) {
+	public function isLine(array $line) {
 		if (count($line) == 3) {
 			return true;
 		}
 
 		throw new \Rubs\Exceptions\InvalidLineException();
+	}
+
+	public function isValidCube($cube) {
+		// TODO : Implement it
+		return $this->isSolvable($cube);
 	}
 
 	/**
@@ -110,8 +115,8 @@ class Security {
 	 *
 	 * @todo Implementing it
 	 */
-	public function is_solvable($cube) {
-		//
+	public function isSolvable($cube) {
+		return true;
 	}
 
 }
