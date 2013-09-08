@@ -1,6 +1,6 @@
 <?php
 
-Rubs\loader::uses('Rubs\Core\Utils');
+Rubs\loader::uses('Rubs\Utils\Utils');
 
 class UtilsTest extends PHPUnit_Framework_TestCase {
 

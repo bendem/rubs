@@ -1,6 +1,6 @@
 <?php
 
-Rubs\loader::uses('Rubs\Core\Matrix');
+Rubs\loader::uses('Rubs\Utils\Matrix');
 
 class MatrixTest extends PHPUnit_Framework_TestCase {
 
