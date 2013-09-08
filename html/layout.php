@@ -25,7 +25,7 @@
 		</div>
 		<div class="logs">
 
-			<?php Rubs\Logger::display() ?>
+			<?php Rubs\Core\Logger::display() ?>
 
 		</div>
 		<div class="content">

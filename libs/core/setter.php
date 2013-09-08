@@ -2,6 +2,8 @@
 
 namespace Rubs\Core;
 
+\Rubs\Loader::uses('Rubs\\Core\\Security');
+
 /**
  * Code gérant les modifications du cube
  * Utilise la classe ``Security`` pour vérifier la validité des données

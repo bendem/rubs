@@ -2,6 +2,12 @@
 
 namespace Rubs\Core;
 
+\Rubs\Loader::uses('Rubs\\Core\\Getter');
+\Rubs\Loader::uses('Rubs\\Core\\Logger');
+\Rubs\Loader::uses('Rubs\\Core\\Setter');
+\Rubs\Loader::uses('Rubs\\Utils\\Matrix');
+\Rubs\Loader::uses('Rubs\\Utils\\Utils');
+
 /**
  * Code gérant les mouvements des faces du cube
  */
@@ -47,7 +53,7 @@ trait Movements {
 		}
 		// Le tableau n'est pas générer dans l'ordre,
 		// du coup on le réorganise
-		$newFace = Utils::array_reorder($newFace);
+		$newFace = \Rubs\Utils\Utils::array_reorder($newFace);
 
 		// On sauve la nouvelle face
 		$this->setFace($face, $newFace);
@@ -83,11 +89,11 @@ trait Movements {
 			for ($j = 0; $j < 3; $j++) {
 				$coord = [$i, $j];
 				// Centrage des coordonées
-				$coord = \Matrix::add($coord, [-1, -1]);
+				$coord = \Rubs\Utils\Matrix::add($coord, [-1, -1]);
 				// Rotation
-				$coord = \Matrix::multiply($coord, $rotationMatrix);
+				$coord = \Rubs\Utils\Matrix::multiply($coord, $rotationMatrix);
 				// Décentrage
-				$coord = \Matrix::add($coord, [1, 1]);
+				$coord = \Rubs\Utils\Matrix::add($coord, [1, 1]);
 
 				$rotationPattern[$i][$j] = $coord;
 			}

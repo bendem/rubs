@@ -2,9 +2,19 @@
 
 namespace Rubs;
 
+Loader::uses('Rubs\\Core\\Display');
+Loader::uses('Rubs\\Core\\Generator');
+Loader::uses('Rubs\\Core\\Getter');
+Loader::uses('Rubs\\Core\\Logger');
+Loader::uses('Rubs\\Core\\Logic');
+Loader::uses('Rubs\\Core\\Movements');
+Loader::uses('Rubs\\Core\\Security');
+Loader::uses('Rubs\\Core\\Setter');
+
+
 class Cube {
 
-	use Movements, Generator, Display, Logic, Getter, Setter;
+	use Core\Movements, Core\Generator, Core\Display, Core\Logic, Core\Getter, Core\Setter;
 
 	protected $cube = [];
 	protected $ended = false;
@@ -15,7 +25,7 @@ class Cube {
 	 */
 	public function __construct() {
 		ob_start();
-		$this->security = new Security($this->colors);
+		$this->security = new Core\Security($this->colors);
 		$this->generate();
 	}
 
@@ -27,7 +37,7 @@ class Cube {
 			$this->ended = true;
 			$content = ob_get_clean();
 			require APP . DS . 'html' . DS . 'layout.php';
-			Logger::save();
+			Core\Logger::save();
 		}
 	}
 

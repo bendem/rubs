@@ -2,6 +2,8 @@
 
 namespace Rubs\Core;
 
+\Rubs\Loader::uses('Rubs\\Exceptions\\*', true);
+
 /**
  * Code vérifiant la validité des données du cube...
  */
