@@ -1,8 +1,43 @@
 <phpunit bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="Ma suite de tests">
+		<testsuite name="Cube Test">
 			<directory>./</directory>
 			<file phpVersion="5.5.0" phpVersionOperator=">=">CubeTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="Logger Test">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">LoggerTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="Security Test">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">SecurityTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="Utils Test">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">UtilsTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="Matrix Test">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">MatrixTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="Loader Test">
+			<directory>./</directory>
+			<file phpVersion="5.5.0" phpVersionOperator=">=">LoaderTest.php</file>
 		</testsuite>
 	</testsuites>
 </phpunit>
