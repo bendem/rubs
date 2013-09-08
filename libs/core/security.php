@@ -23,10 +23,11 @@ class Security {
 
 	/**
 	 * Vérifie si les couleurs sont bien 6 et différentes
-	 * @param array $colors Tableau des 6 couleurs du cube
+	 * @param array      $colors Tableau des 6 couleurs du cube
+	 * @param \Rubs\Cube $cube
 	 * @throws InvalidColorException
 	 */
-	public function __construct(array $colors, $cube) {
+	public function __construct(array $colors, \Rubs\Cube $cube) {
 		if (count($colors) != 6) {
 			throw new InvalidColorException("6 Couleurs... Pas plus pas moins");
 		}
@@ -62,6 +63,11 @@ class Security {
 		return true;
 	}
 
+	/**
+	 * Vérifie si un numéro de face est correct
+	 * @param  int  $number Numéro de face
+	 * @throws InvalidFaceNumberException
+	 */
 	public function is_face_number($number) {
 		if($number < 0 || $number > 5) {
 			throw new InvalidFaceNumberException();
@@ -70,10 +76,15 @@ class Security {
 		return true;
 	}
 
+	/**
+	 * Vérifie si deux faces peuvent être adjacentes
+	 * @param  int $face1
+	 * @param  int $face2 [description]
+	 * @throws CantBeAdjacentException
+	 */
 	public function canBeAdjacent($face1, $face2) {
 		if($this->_cube->getOppositeFace($face1) == $face2) {
 			throw new CantBeAdjacentException($face1, $face2);
-
 		}
 	}
 
