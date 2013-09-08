@@ -28,6 +28,7 @@ class Loader {
 	}
 
 	protected static function _loadFile($path) {
+		$path = self::_getCameledCasePath($path);
 		if(in_array($path, self::$_loaded)) {
 			return false;
 		}
@@ -53,6 +54,33 @@ class Loader {
 		return $ret;
 	}
 
+	protected static function _getCameledCasePath($path) {
+		$path = str_replace(APP, '', $path);
+		$pathinfo = explode(DS, $path);
+		if($pathinfo[0] === '') {
+			array_shift($pathinfo);
+		}
+		$path = APP;
+		foreach (array_slice($pathinfo, 0, -1) as $v) {
+			$path .= DS . self::_searchRealName($path, $v);
+		}
+
+		$filename = array_pop($pathinfo);
+		$path .= DS . self::_searchRealName($path, $filename);
+
+		return $path;
+	}
+
+	protected static function _searchRealName($path, $toAdd) {
+		$files = array_diff(scandir($path), ['.', '..']);
+		foreach ($files as $file) {
+			if(strtolower($file) === strtolower($toAdd)) {
+				return $file;
+			}
+		}
+	}
+
 }
+
 
 Loader::uses('Cube');
