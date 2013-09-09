@@ -16,4 +16,6 @@ function delTree($dir) {
 
 require APP . DS . 'libs' . DS . 'loader.php';
 
-delTree(TMP);
+if(is_dir(TMP)) {
+	delTree(TMP);
+}

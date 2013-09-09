@@ -4,7 +4,7 @@ php:
     - 5.5
 
 script:
-    - phpunit -c tests/phpunit.xml
+    - phpunit -c tests/phpunit.xml -v
 
 notifications:
     on_success: never
