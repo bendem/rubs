@@ -15,15 +15,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function tearDown() {
-		$this->_delTree($this->tmpFolder);
-	}
-
-	protected function _delTree($dir) {
-		$files = array_diff(scandir($dir), array('.','..'));
-		foreach ($files as $file) {
-			(is_dir($dir . DS . $file)) ? $this->delTree($dir . DS . $file) : unlink($dir . DS . $file);
-		}
-		return rmdir($dir);
+		delTree($this->tmpFolder);
 	}
 
 	public function testLoading() {
