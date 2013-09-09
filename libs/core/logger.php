@@ -88,7 +88,7 @@ class Logger {
 		}
 	}
 
-	public static function save($path = false) {
+	public static function save($path = false, $max = 5) {
 		if(!$path) {
 			$path = APP . DS . 'logs';
 		}
@@ -116,7 +116,7 @@ class Logger {
 		$header .= "  Logs du $date\n";
 		$header .= "================================\n\n";
 		file_put_contents($path . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
-		self::_clearLogs(5, $path);
+		self::_clearLogs($path, $max);
 	}
 
 	/**
@@ -151,7 +151,7 @@ class Logger {
 		return $html . "</div>";
 	}
 
-	protected static function _clearLogs($max, $path) {
+	protected static function _clearLogs($path, $max) {
 		$path = $path;
 		$exclude = array('.', '..');
 		$_logs = array_diff(scandir($path), $exclude);
