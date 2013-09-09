@@ -9,10 +9,10 @@ class LoggerTest extends PHPUnit_Framework_TestCase {
 
 	public function testLogDirCreation() {
 		Rubs\Core\Logger::info('test');
-		Rubs\Core\Logger::save();
+		Rubs\Core\Logger::save(TMP);
 
-		$this->assertTrue(is_dir(APP . DS . 'logs'));
-		$this->assertGreaterThanOrEqual(3, count(scandir(APP . DS . 'logs')));
+		$this->assertTrue(is_dir(TMP));
+		$this->assertEquals(3, count(scandir(TMP)));
 	}
 
 	public function testLogFileNameCreation() {
