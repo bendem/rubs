@@ -88,9 +88,12 @@ class Logger {
 		}
 	}
 
-	public static function save() {
-		if(!is_dir(APP . DS . 'logs')) {
-			mkdir(APP . DS . 'logs', 0775);
+	public static function save($path = false) {
+		if(!$path) {
+			$path = APP . DS . 'logs';
+		}
+		if(!is_dir($path)) {
+			mkdir($path, 0775);
 		}
 
 		$i = 0;
@@ -112,8 +115,8 @@ class Logger {
 		$header = "================================\n";
 		$header .= "  Logs du $date\n";
 		$header .= "================================\n\n";
-		file_put_contents(APP . DS . 'logs' . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
-		self::_clearLogs();
+		file_put_contents($path . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
+		self::_clearLogs(5, $path);
 	}
 
 	/**
@@ -148,8 +151,8 @@ class Logger {
 		return $html . "</div>";
 	}
 
-	protected static function _clearLogs($max = 5) {
-		$path = APP . DS . 'logs';
+	protected static function _clearLogs($max, $path) {
+		$path = $path;
 		$exclude = array('.', '..');
 		$_logs = array_diff(scandir($path), $exclude);
 		sort($_logs);
