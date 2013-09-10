@@ -2,6 +2,8 @@
 
 namespace Rubs\Core;
 
+\Rubs\Loader::uses('Rubs\Utils\Date');
+
 /**
  * Système de logging
  * @author bendem <bendembd@gmail.com>
@@ -111,10 +113,11 @@ class Logger {
 			}
 		}
 
-		$date = date('Y-m-d_H-i-s');
-		$header = "================================\n";
+		$date = new \Rubs\Utils\Date();
+		$date = $date->format('Y-m-d_H-i-s_u');
+		$header = "===================================\n";
 		$header .= "  Logs du $date\n";
-		$header .= "================================\n\n";
+		$header .= "===================================\n\n";
 		file_put_contents($path . DS . 'logs-' . $date . '.txt', $header . implode("\n", $data));
 		self::_clearLogs($path, $max);
 	}

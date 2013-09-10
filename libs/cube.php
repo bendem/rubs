@@ -43,6 +43,7 @@ class Cube {
 				$content = ob_get_clean();
 				require APP . DS . 'html' . DS . 'layout.php';
 			}
+			Core\Logger::info('End of execution');
 			Core\Logger::save();
 		}
 	}
