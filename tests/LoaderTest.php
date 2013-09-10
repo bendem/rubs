@@ -21,15 +21,25 @@ class LoaderTest extends PHPUnit_Framework_TestCase {
 	public function testLoading() {
 		file_put_contents(
 			$this->tmpFolder . DS . 'test1.php',
-			'<?php namespace Rubs\Tmp; function yolo() {} ?>'
+			'<?php namespace Rubs\Tmp; class Test1 {} ?>'
 		);
 
 		Rubs\Loader::uses('Rubs\Tmp\Test1');
-		$this->assertTrue(function_exists('Rubs\Tmp\yolo'));
+		$this->assertTrue(class_exists('Rubs\Tmp\Test1'));
 	}
 
 	public function testCascadingLoading() {
-		$this->markTestIncomplete();
+		file_put_contents(
+			$this->tmpFolder . DS . 'test2.php',
+			"<?php namespace Rubs\Tmp; \\Rubs\\Loader::uses('Rubs\\Tmp\\Test1'); class Test2 {} ?>"
+		);
+		file_put_contents(
+			$this->tmpFolder . DS . 'test1.php',
+			"<?php namespace Rubs\Tmp; class Test1 {} ?>"
+		);
+
+		Rubs\Loader::uses('Rubs\Tmp\Test2');
+		$this->assertTrue(class_exists('Rubs\Tmp\Test1'));
 	}
 
 }
